@@ -62,3 +62,13 @@ __pycache__/
 venv/
 env/
 .DS_Store
+
+# -- gap viewer output (shows match data) --
+gap_views/
+gap_report.csv
+review_cache/
+
+# -- our working files ---------------------------------------------------------------------------
+# Submission files are full-match label sets: never committed. Regenerate them (see README.md).
+/*.csv
+*.npz

@@ -1,10 +1,11 @@
-# Everything the evaluation needs. Deliberately two lines.
+# Pinned versions used to produce Old_Trafford_Ballers.csv (Python 3.12.6, macOS).
 #
-# The scorer is dependency-light on purpose: no sklearn, no torch, nothing that pins a Python
-# version. It runs under 3.8 and 3.11 alike and produces identical output, so "it scored
-# differently on my machine" is not a conversation anyone has to have.
-#
-# Optional tooling -- the ATD loader and anything that opens the video -- lives in
-# requirements-starter.txt.
-numpy
-pandas
+# numpy + pandas are all the submission pipeline needs
+# (starter/baseline.py, possession_filter.py, evaluation/).
+numpy==1.26.4
+pandas==2.2.3
+
+# Only for the review tools (gap_viewer.py, review_player.py), which open the video.
+# Not needed to reproduce the submission file.
+opencv-python==4.11.0.86
+matplotlib==3.9.2
