@@ -13,6 +13,10 @@ possession rather than per-frame accuracy. The pipeline has two steps:
    `baseline.py --window 0`, unchanged.
 2. **Possession rules** (`possession_filter.py --use-tags`), described below.
 
+We used Claude (an LLM) as a coding and reasoning assistant. It wrote and reviewed code and
+helped design the rules. It produced no labels and was given no data about this match beyond the
+provided assets.
+
 The output has 319 possessions during play (mean 12.8 s, median 7.7 s), and 5.6% of them are
 shorter than 2 s. The smoothed starter baseline has 584 possessions (median 4.6 s, 31.5% under
 2 s). The flicker it produces is what our rules are designed to remove.
@@ -85,7 +89,10 @@ truth once, on v1, to check the file scored without errors, and changed no param
 
 ## Next steps
 
-- Detect stoppages from player speed (everyone walking) and from the ball leaving the pitch.
+- Detect stoppages from player speed (everyone walking) and from the ball leaving the pitch. A
+  first try at speed-based detection used a fixed walking-pace cut-off (mean speed under
+  1.4 m/s for 3 s) and flagged about a third of play, so it needs a threshold relative to the
+  match's normal speed instead.
 - Handle the goalkeeper specifically.
 - Plot where on the pitch gaps start, to test the camera-distance idea.
 

@@ -72,3 +72,6 @@ review_cache/
 # Submission files are full-match label sets: never committed. Regenerate them (see README.md).
 /*.csv
 *.npz
+
+# Local upload folder (copies of the submission CSV and document). Not committed.
+submission/

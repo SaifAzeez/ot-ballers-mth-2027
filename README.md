@@ -50,7 +50,15 @@ The output is deterministic. Its SHA-1 should be `f24e04c771ec9fc2c13fd392d2ba7b
 shasum Old_Trafford_Ballers.csv
 ```
 
-Leaving out `--use-tags` gives our v1 (SHA-1 `4843c922fd0ab2f894e9f207e9a4441f0208bb5a`).
+**The submitted file is exactly this default command, with `--use-tags`.** Leaving out
+`--use-tags` gives our v1 (SHA-1 `4843c922fd0ab2f894e9f207e9a4441f0208bb5a`).
+
+`possession_filter.py` also has two **experimental** flags. They are **not used for the
+submission**, and are kept so the experiments in the technical document can be rerun:
+
+- `--stoppages` marks frames dead when the ball is out of play, and when the mean player speed
+  stays below 1.4 m/s for 3 s.
+- `--ball-out` applies only the ball-out-of-play rule.
 
 Tests (these need no data):
 
